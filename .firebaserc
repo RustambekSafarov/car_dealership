@@ -1,0 +1,22 @@
+{
+  "projects": {},
+  "targets": {
+    "web-app-6483d": {
+      "hosting": {
+        "avtosalon": [
+          "web-app-6483d"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "hosting": {
+    "site": "dafna-1",
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

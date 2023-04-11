@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "avtosalon",
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
