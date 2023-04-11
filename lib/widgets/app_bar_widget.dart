@@ -59,8 +59,8 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               ],
             ),
           ),
-          Image.asset(
-            'kialogo.png',
+          Image.network(
+            'https://telegra.ph/file/fee6f9ababebcb91fd334.png',
             fit: BoxFit.cover,
           ),
           Container(
