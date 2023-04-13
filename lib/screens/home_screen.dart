@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(50),
                         color: Color(0xFF05141f),
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back,
                         color: Colors.white,
                       ),
@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(50),
                         color: Color(0xFF05141f),
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_forward,
                         color: Colors.white,
                       ),
@@ -129,9 +129,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SliverToBoxAdapter(
             child: Column(
-              children: [
+              children: const [
                 SizedBox(
-                  height: 50,
+                  height: 20,
                 ),
                 Text(
                   'Kia Modellari',
@@ -145,6 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+
           // SliverToBoxAdapter(
           //   child: TabBar(
           //     tabs: [
