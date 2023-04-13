@@ -52,6 +52,13 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                 InkWell(
                   onTap: () {},
                   child: Text(
+                    'Konfigurator',
+                    style: appBarText,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
                     'Maxsus takliflar',
                     style: appBarText,
                   ),
@@ -72,6 +79,13 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   onTap: () {},
                   child: Text(
                     'Dilerlar',
+                    style: appBarText,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    'Test drayvga yozilish',
                     style: appBarText,
                   ),
                 ),

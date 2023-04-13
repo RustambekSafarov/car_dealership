@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Material(
       child: DefaultTabController(
         length: 9,
-        animationDuration: const Duration(milliseconds: 100),
+        animationDuration: const Duration(milliseconds: 500),
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -123,8 +123,8 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverPadding(
               padding: EdgeInsets.only(
                 bottom: 40,
-                left: MediaQuery.of(context).size.width / 4,
-                right: MediaQuery.of(context).size.width / 4,
+                left: MediaQuery.of(context).size.width / 5,
+                right: MediaQuery.of(context).size.width / 5,
               ),
               sliver: const SliverToBoxAdapter(
                 child: TabBar(
