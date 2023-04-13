@@ -19,7 +19,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            width: constraints.maxWidth * 0.3,
+            width: constraints.maxWidth * 0.38,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -35,14 +35,21 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     });
                   },
                   child: InkWell(
+                    hoverColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                     onTap: () {},
                     child: Text(
                       'Modellar',
-                      style: appBarText,
+                      style:
+                          modellar == false ? appBarTextUnderlined : appBarText,
                     ),
                   ),
                 ),
                 InkWell(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () {},
                   child: Text(
                     'Tanlov va sotib olish',
@@ -50,6 +57,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   ),
                 ),
                 InkWell(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () {},
                   child: Text(
                     'Konfigurator',
@@ -57,6 +67,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   ),
                 ),
                 InkWell(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () {},
                   child: Text(
                     'Maxsus takliflar',
@@ -66,16 +79,22 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               ],
             ),
           ),
-          Image.network(
-            'https://telegra.ph/file/fee6f9ababebcb91fd334.png',
-            fit: BoxFit.cover,
+          SizedBox(
+            // width: MediaQuery.of(context).size.width / 16,
+            child: Image.network(
+              'https://telegra.ph/file/fee6f9ababebcb91fd334.png',
+              fit: BoxFit.cover,
+            ),
           ),
           Container(
-            width: constraints.maxWidth * 0.3,
+            width: constraints.maxWidth * 0.4,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 InkWell(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () {},
                   child: Text(
                     'Dilerlar',
@@ -83,6 +102,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   ),
                 ),
                 InkWell(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () {},
                   child: Text(
                     'Test drayvga yozilish',
@@ -90,6 +112,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   ),
                 ),
                 InkWell(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () {},
                   child: Text(
                     'Kia Olami',
@@ -97,6 +122,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   ),
                 ),
                 InkWell(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () {},
                   child: Text(
                     'Test drayvga yozilish',
@@ -104,6 +132,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   ),
                 ),
                 IconButton(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onPressed: () {},
                   icon: Icon(
                     Icons.phone,
@@ -111,19 +142,25 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   ),
                 ),
                 InkWell(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () {},
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'RU',
-                        style: appBarText,
-                      ),
-                      Text(
-                        'UZ',
-                        style: appBarText,
-                      ),
-                    ],
+                  child: Container(
+                    height: 40,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'RU',
+                          style: appBarText,
+                        ),
+                        Text(
+                          'UZ',
+                          style: appBarText,
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],

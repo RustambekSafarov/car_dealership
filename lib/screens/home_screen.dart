@@ -65,11 +65,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   setState(() {
                     number = false;
                     appBarText = TextStyle(color: Colors.black, fontSize: 15);
+                    appBarTextUnderlined = TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      decoration: TextDecoration.underline,
+                    );
                   });
                 },
                 onExit: (event) {
                   setState(() {
                     number = true;
+                    appBarText = TextStyle(color: Colors.white, fontSize: 15);
+                    appBarTextUnderlined = TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      decoration: TextDecoration.underline,
+                    );
                   });
                 },
                 child: AppBarWidget(),
