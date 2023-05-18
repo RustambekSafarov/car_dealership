@@ -1,7 +1,5 @@
 import 'package:car_dealership/style/appBar_style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class AppBarWidget extends StatefulWidget {
   const AppBarWidget({super.key});
@@ -20,6 +18,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
         children: [
           Container(
             width: constraints.maxWidth * 0.38,
+            // color: Colors.transparent,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -41,8 +40,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     onTap: () {},
                     child: Text(
                       'Modellar',
-                      style:
-                          modellar == false ? appBarTextUnderlined : appBarText,
+                      style: modellar == false ? appBarTextUnderlined : appBarText,
                     ),
                   ),
                 ),
@@ -146,22 +144,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () {},
-                  child: Container(
-                    height: 40,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'RU',
-                          style: appBarText,
-                        ),
-                        Text(
-                          'UZ',
-                          style: appBarText,
-                        ),
-                      ],
-                    ),
-                  ),
+                  child: Icon(Icons.shopping_cart_outlined),
                 )
               ],
             ),
