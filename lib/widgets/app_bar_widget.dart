@@ -1,5 +1,10 @@
+// ignore_for_file: unused_import
+
+import 'package:car_dealership/screens/home_screen.dart';
+import 'package:car_dealership/screens/models_screen.dart';
 import 'package:car_dealership/style/appBar_style.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AppBarWidget extends StatefulWidget {
   const AppBarWidget({super.key});
@@ -37,7 +42,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     hoverColor: Colors.transparent,
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
-                    onTap: () {},
+                    onTap: () {
+                      context.goNamed(ModelsScreen.routeName);
+                    },
                     child: Text(
                       'Modellar',
                       style: modellar == false ? appBarTextUnderlined : appBarText,
@@ -77,11 +84,17 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               ],
             ),
           ),
-          SizedBox(
-            // width: MediaQuery.of(context).size.width / 16,
-            child: Image.network(
-              'https://telegra.ph/file/fee6f9ababebcb91fd334.png',
-              fit: BoxFit.cover,
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pop();
+              // context.goNamed(HomeScreen.routeName);
+            },
+            child: SizedBox(
+              // width: MediaQuery.of(context).size.width / 16,
+              child: Image.network(
+                'https://telegra.ph/file/fee6f9ababebcb91fd334.png',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Container(

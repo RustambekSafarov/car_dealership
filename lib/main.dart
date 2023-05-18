@@ -3,6 +3,7 @@
 import 'package:car_dealership/providers/cars_api.dart';
 import 'package:car_dealership/screens/example.dart';
 import 'package:car_dealership/screens/home_screen.dart';
+import 'package:car_dealership/screens/models_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -29,8 +30,15 @@ class MyApp extends StatelessWidget {
         routerConfig: GoRouter(initialLocation: '/', routes: [
           GoRoute(
             path: '/',
-            name: 'HomeScreen.routeName',
+            name: HomeScreen.routeName,
             builder: (context, state) => HomeScreen(),
+            routes: [
+              GoRoute(
+                path: 'models',
+                name: ModelsScreen.routeName,
+                builder: (context, state) => ModelsScreen(),
+              ),
+            ],
           )
         ]),
       ),

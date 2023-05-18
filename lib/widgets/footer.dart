@@ -221,19 +221,31 @@ class Footer extends StatelessWidget {
                             children: [
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(LineAwesomeIcons.youtube),
+                                icon: Icon(
+                                  LineAwesomeIcons.youtube,
+                                  color: Colors.white,
+                                ),
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(LineAwesomeIcons.instagram),
+                                icon: Icon(
+                                  LineAwesomeIcons.instagram,
+                                  color: Colors.white,
+                                ),
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(LineAwesomeIcons.facebook),
+                                icon: Icon(
+                                  LineAwesomeIcons.facebook,
+                                  color: Colors.white,
+                                ),
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(LineAwesomeIcons.telegram),
+                                icon: Icon(
+                                  LineAwesomeIcons.telegram,
+                                  color: Colors.white,
+                                ),
                               ),
                             ],
                           )

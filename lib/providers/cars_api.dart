@@ -22,4 +22,21 @@ class CarApi with ChangeNotifier {
 
     return _cars;
   }
+
+  List<Car> _carsByModel = [];
+  List<Car> get carsByModel {
+    return [..._carsByModel];
+  }
+
+  Future<List<Car>> getModels(String model) async {
+    Uri url = Uri.parse('https://avtosalon.pythonanywhere.com/api/car/');
+    var headers = {
+      'Content-Type': 'application/json',
+    };
+    http.Response response = await http.get(url, headers: headers);
+    List dataFromJson = jsonDecode(response.body);
+    _carsByModel = dataFromJson.where((element) => element['model'].substring(0, 3) == model.substring(0, 3)).map((e) => Car.getCar(e)).toList();
+
+    return _carsByModel;
+  }
 }
