@@ -2,9 +2,12 @@
 
 import 'package:car_dealership/screens/home_screen.dart';
 import 'package:car_dealership/screens/models_screen.dart';
+import 'package:car_dealership/screens/special_offers_screen.dart';
 import 'package:car_dealership/style/appBar_style.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../screens/konfigurator_screen.dart';
 
 class AppBarWidget extends StatefulWidget {
   const AppBarWidget({super.key});
@@ -15,6 +18,13 @@ class AppBarWidget extends StatefulWidget {
 
 class _AppBarWidgetState extends State<AppBarWidget> {
   bool modellar = true;
+  bool konfigurator = true;
+  bool tanlov = true;
+  bool taklif = true;
+  bool diler = true;
+  bool drayv = true;
+  bool olam = true;
+  bool egalari = true;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
@@ -51,34 +61,74 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     ),
                   ),
                 ),
-                InkWell(
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {},
-                  child: Text(
-                    'Tanlov va sotib olish',
-                    style: appBarText,
+                MouseRegion(
+                  onEnter: (event) {
+                    setState(() {
+                      tanlov = false;
+                    });
+                  },
+                  onExit: (event) {
+                    setState(() {
+                      tanlov = true;
+                    });
+                  },
+                  child: InkWell(
+                    hoverColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () {},
+                    child: Text(
+                      'Kia tarixi',
+                      style: tanlov == false ? appBarTextUnderlined : appBarText,
+                    ),
                   ),
                 ),
-                InkWell(
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {},
-                  child: Text(
-                    'Konfigurator',
-                    style: appBarText,
+                MouseRegion(
+                  onEnter: (event) {
+                    setState(() {
+                      konfigurator = false;
+                    });
+                  },
+                  onExit: (event) {
+                    setState(() {
+                      konfigurator = true;
+                    });
+                  },
+                  child: InkWell(
+                    hoverColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () {
+                      context.goNamed(KonfiguratorScreen.routeName);
+                    },
+                    child: Text(
+                      'Konfigurator',
+                      style: konfigurator == false ? appBarTextUnderlined : appBarText,
+                    ),
                   ),
                 ),
-                InkWell(
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {},
-                  child: Text(
-                    'Maxsus takliflar',
-                    style: appBarText,
+                MouseRegion(
+                  onEnter: (event) {
+                    setState(() {
+                      taklif = false;
+                    });
+                  },
+                  onExit: (event) {
+                    setState(() {
+                      taklif = true;
+                    });
+                  },
+                  child: InkWell(
+                    hoverColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () {
+                      context.goNamed(SpecialOffersScreen.routeName);
+                    },
+                    child: Text(
+                      'Maxsus takliflar',
+                      style: taklif == false ? appBarTextUnderlined : appBarText,
+                    ),
                   ),
                 ),
               ],
@@ -102,44 +152,92 @@ class _AppBarWidgetState extends State<AppBarWidget> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                InkWell(
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {},
-                  child: Text(
-                    'Dilerlar',
-                    style: appBarText,
+                MouseRegion(
+                  onEnter: (event) {
+                    setState(() {
+                      diler = false;
+                    });
+                  },
+                  onExit: (event) {
+                    setState(() {
+                      diler = true;
+                    });
+                  },
+                  child: InkWell(
+                    hoverColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () {},
+                    child: Text(
+                      'Dilerlar',
+                      style: diler == false ? appBarTextUnderlined : appBarText,
+                    ),
                   ),
                 ),
-                InkWell(
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {},
-                  child: Text(
-                    'Test drayvga yozilish',
-                    style: appBarText,
+                MouseRegion(
+                  onEnter: (event) {
+                    setState(() {
+                      drayv = false;
+                    });
+                  },
+                  onExit: (event) {
+                    setState(() {
+                      drayv = true;
+                    });
+                  },
+                  child: InkWell(
+                    hoverColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () {},
+                    child: Text(
+                      'Test drayvga yozilish',
+                      style: drayv == false ? appBarTextUnderlined : appBarText,
+                    ),
                   ),
                 ),
-                InkWell(
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {},
-                  child: Text(
-                    'Kia Olami',
-                    style: appBarText,
+                MouseRegion(
+                  onEnter: (event) {
+                    setState(() {
+                      olam = false;
+                    });
+                  },
+                  onExit: (event) {
+                    setState(() {
+                      olam = true;
+                    });
+                  },
+                  child: InkWell(
+                    hoverColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () {},
+                    child: Text(
+                      'Kia Olami',
+                      style: olam == false ? appBarTextUnderlined : appBarText,
+                    ),
                   ),
                 ),
-                InkWell(
-                  hoverColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {},
-                  child: Text(
-                    'Test drayvga yozilish',
-                    style: appBarText,
+                MouseRegion(
+                  onEnter: (event) {
+                    setState(() {
+                      egalari = false;
+                    });
+                  },
+                  onExit: (event) {
+                    setState(() {
+                      egalari = true;
+                    });
+                  },
+                  child: InkWell(
+                    hoverColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () {},
+                    child: Text(
+                      'Ehtiyot qismlar',
+                      style: egalari == false ? appBarTextUnderlined : appBarText,
+                    ),
                   ),
                 ),
                 IconButton(

@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 
+import 'package:car_dealership/screens/special_offers_screen.dart';
 import 'package:car_dealership/widgets/app_bar_widget.dart';
 import 'package:car_dealership/widgets/footer.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:currency_formatter/currency_formatter.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
@@ -466,7 +468,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           backgroundColor: Color(0xFF05141F),
                           shape: const RoundedRectangleBorder(),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          context.goNamed(SpecialOffersScreen.routeName);
+                        },
                         child: Text('Barcha maxsus takliflar'),
                       ),
                     ),

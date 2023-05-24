@@ -3,7 +3,9 @@
 import 'package:car_dealership/providers/cars_api.dart';
 import 'package:car_dealership/screens/example.dart';
 import 'package:car_dealership/screens/home_screen.dart';
+import 'package:car_dealership/screens/konfigurator_screen.dart';
 import 'package:car_dealership/screens/models_screen.dart';
+import 'package:car_dealership/screens/special_offers_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -37,6 +39,16 @@ class MyApp extends StatelessWidget {
                 path: 'models',
                 name: ModelsScreen.routeName,
                 builder: (context, state) => ModelsScreen(),
+              ),
+              GoRoute(
+                path: 'konfigurator',
+                name: KonfiguratorScreen.routeName,
+                builder: (context, state) => KonfiguratorScreen(),
+              ),
+              GoRoute(
+                path: 'maxsus',
+                name: SpecialOffersScreen.routeName,
+                builder: (context, state) => SpecialOffersScreen(),
               ),
             ],
           )

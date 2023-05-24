@@ -206,6 +206,7 @@ class ModelsScreen extends StatelessWidget {
                 return snapshot.hasData
                     ? GridView.builder(
                         shrinkWrap: true,
+                        padding: const EdgeInsets.only(bottom: 100),
                         itemCount: snapshot.data!.length,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, childAspectRatio: 1.4),
                         itemBuilder: (context, index) {
