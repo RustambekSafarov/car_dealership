@@ -1,9 +1,12 @@
 // ignore_for_file: unused_import
 
 import 'package:car_dealership/providers/cars_api.dart';
+import 'package:car_dealership/providers/model_info.dart';
+import 'package:car_dealership/screens/dilers_screen.dart';
 import 'package:car_dealership/screens/example.dart';
 import 'package:car_dealership/screens/home_screen.dart';
 import 'package:car_dealership/screens/konfigurator_screen.dart';
+import 'package:car_dealership/screens/model_info_screen.dart';
 import 'package:car_dealership/screens/models_screen.dart';
 import 'package:car_dealership/screens/special_offers_screen.dart';
 import 'package:flutter/material.dart';
@@ -22,9 +25,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => CarApi(),
-        )
+        ChangeNotifierProvider(create: (context) => CarApi()),
+        ChangeNotifierProvider(create: (context) => ModelInfo()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
@@ -43,12 +45,24 @@ class MyApp extends StatelessWidget {
               GoRoute(
                 path: 'konfigurator',
                 name: KonfiguratorScreen.routeName,
-                builder: (context, state) => KonfiguratorScreen(),
+                builder: (context, state) => const KonfiguratorScreen(),
               ),
               GoRoute(
                 path: 'maxsus',
                 name: SpecialOffersScreen.routeName,
-                builder: (context, state) => SpecialOffersScreen(),
+                builder: (context, state) => const SpecialOffersScreen(),
+              ),
+              GoRoute(
+                path: 'model/:name',
+                name: ModelInfoScreen.routeName,
+                builder: (context, state) => ModelInfoScreen(
+                  name: state.params['name'].toString(),
+                ),
+              ),
+              GoRoute(
+                path: 'dilers',
+                name: DilersScreen.routeName,
+                builder: (context, state) => const DilersScreen(),
               ),
             ],
           )

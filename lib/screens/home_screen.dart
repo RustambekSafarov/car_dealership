@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
 
 import '../providers/cars_api.dart';
+import 'model_info_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -86,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         animationDuration: const Duration(milliseconds: 500),
         child: CustomScrollView(
           controller: _scrollController,
-          scrollBehavior: ScrollBehavior(),
+          scrollBehavior: const ScrollBehavior(),
           slivers: [
             SliverAppBar(
               // title: Image.network('https://cdn.mos.cms.futurecdn.net/owm4oa3hXUG58mka7hPvfP.jpg'),
@@ -117,12 +118,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     top: 290,
                     child: FilledButton(
                       style: FilledButton.styleFrom(
-                        backgroundColor: Color(0xFF05141F),
+                        backgroundColor: const Color(0xFF05141F),
                         shape: const CircleBorder(),
                         padding: const EdgeInsets.all(25),
                       ),
                       onPressed: () => onPageChange(_currentIndex != 0 ? _currentIndex -= 1 : _currentIndex = videoLink.length - 1, CarouselPageChangedReason),
-                      child: Icon(Icons.arrow_back_rounded),
+                      child: const Icon(Icons.arrow_back_rounded),
                     ),
                   ),
                   Positioned(
@@ -130,12 +131,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     top: 290,
                     child: FilledButton(
                       style: FilledButton.styleFrom(
-                        backgroundColor: Color(0xFF05141F),
+                        backgroundColor: const Color(0xFF05141F),
                         shape: const CircleBorder(),
                         padding: const EdgeInsets.all(25),
                       ),
                       onPressed: () => onPageChange(_currentIndex != videoLink.length - 1 ? _currentIndex += 1 : _currentIndex = 0, CarouselPageChangedReason),
-                      child: Icon(Icons.arrow_forward),
+                      child: const Icon(Icons.arrow_forward),
                     ),
                   )
                 ],
@@ -161,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ),
             ),
             SliverPadding(
-              padding: EdgeInsets.only(bottom: 80),
+              padding: const EdgeInsets.only(bottom: 80),
               sliver: SliverList(
                 delegate: SliverChildListDelegate(
                   [
@@ -218,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               ],
                             ),
                             Container(
-                              padding: EdgeInsets.only(bottom: 30, top: 20),
+                              padding: const EdgeInsets.only(bottom: 30, top: 20),
                               height: 560,
                               child: FutureBuilder(
                                 future: Provider.of<CarApi>(context, listen: false).getCars(),
@@ -254,17 +255,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                           style: GoogleFonts.openSans(
                                                             fontSize: 38,
                                                             fontWeight: FontWeight.w600,
-                                                            color: Color(0xFF05141F),
+                                                            color: const Color(0xFF05141F),
                                                           ),
                                                         ),
-                                                        SizedBox(
+                                                        const SizedBox(
                                                           height: 8,
                                                         ),
                                                         Text(
                                                           '${CurrencyFormatter.format(e.price, som)} so\'m dan',
                                                           style: GoogleFonts.montserrat(
                                                             fontSize: 18,
-                                                            color: Color(0xFF05141F),
+                                                            color: const Color(0xFF05141F),
                                                           ),
                                                         ),
                                                       ],
@@ -278,12 +279,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                     width: 250,
                                                     height: 60,
                                                     child: ElevatedButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        print(e.name.toLowerCase());
+                                                        context.goNamed(
+                                                          ModelInfoScreen.routeName,
+                                                          params: {'name': e.name},
+                                                        );
+                                                      },
                                                       style: ElevatedButton.styleFrom(
-                                                        primary: Color(0xFF05141F),
+                                                        backgroundColor: const Color(0xFF05141F),
                                                         shape: const RoundedRectangleBorder(),
                                                       ),
-                                                      child: Text('Model haqida batafsil ma\'lumot'),
+                                                      child: const Text('Model haqida batafsil ma\'lumot'),
                                                     ),
                                                   ),
                                                 ),
@@ -331,7 +338,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           width: width * 0.21,
                           height: 400,
                           color: Colors.grey[100],
-                          padding: EdgeInsets.only(left: 8, right: 8),
+                          padding: const EdgeInsets.only(left: 8, right: 8),
                           child: Column(
                             children: [
                               SizedBox(
@@ -352,7 +359,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   '12 oy davomida foizsiz bo\'lib to\'lash',
                                   style: GoogleFonts.montserrat(
                                     fontSize: 17,
-                                    color: Color(0xFF05141F),
+                                    color: const Color(0xFF05141F),
                                   ),
                                 ),
                               ),
@@ -363,7 +370,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           width: width * 0.21,
                           height: 400,
                           color: Colors.grey[100],
-                          padding: EdgeInsets.only(left: 8, right: 8),
+                          padding: const EdgeInsets.only(left: 8, right: 8),
                           child: Column(
                             children: [
                               SizedBox(
@@ -384,7 +391,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   'Kreditlash uchun maxsus taklif',
                                   style: GoogleFonts.montserrat(
                                     fontSize: 17,
-                                    color: Color(0xFF05141F),
+                                    color: const Color(0xFF05141F),
                                   ),
                                 ),
                               ),
@@ -395,7 +402,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           width: width * 0.21,
                           height: 400,
                           color: Colors.grey[100],
-                          padding: EdgeInsets.only(left: 8, right: 8),
+                          padding: const EdgeInsets.only(left: 8, right: 8),
                           child: Column(
                             children: [
                               SizedBox(
@@ -416,7 +423,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   'Asaka Bank-dan 50% avans to\'lovi bilan avtomobil krediti, butun model oralig\'i uchun 0% stavka',
                                   style: GoogleFonts.montserrat(
                                     fontSize: 17,
-                                    color: Color(0xFF05141F),
+                                    color: const Color(0xFF05141F),
                                   ),
                                 ),
                               ),
@@ -427,7 +434,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           width: width * 0.21,
                           height: 400,
                           color: Colors.grey[100],
-                          padding: EdgeInsets.only(left: 8, right: 8),
+                          padding: const EdgeInsets.only(left: 8, right: 8),
                           child: Column(
                             children: [
                               SizedBox(
@@ -448,7 +455,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   'Davr Bank-dan 0% avans to\'lovi bilan avtomobil krediti, butun model oralig\'i uchun 24% stavka',
                                   style: GoogleFonts.montserrat(
                                     fontSize: 17,
-                                    color: Color(0xFF05141F),
+                                    color: const Color(0xFF05141F),
                                   ),
                                 ),
                               ),
@@ -465,13 +472,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       height: 60,
                       child: FilledButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF05141F),
+                          backgroundColor: const Color(0xFF05141F),
                           shape: const RoundedRectangleBorder(),
                         ),
                         onPressed: () {
                           context.goNamed(SpecialOffersScreen.routeName);
                         },
-                        child: Text('Barcha maxsus takliflar'),
+                        child: const Text('Barcha maxsus takliflar'),
                       ),
                     ),
                   ],
@@ -497,7 +504,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 ],
               ),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: Footer(),
             )
           ],

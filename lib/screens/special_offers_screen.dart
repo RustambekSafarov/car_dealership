@@ -13,7 +13,7 @@ class SpecialOffersScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: AppBarWidget(),
+        title: const AppBarWidget(),
         backgroundColor: const Color(0xFF227093),
         toolbarHeight: 80,
       ),
@@ -33,7 +33,7 @@ class SpecialOffersScreen extends StatelessWidget {
                 width: width * 0.21,
                 height: 400,
                 color: Colors.grey[100],
-                padding: EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Column(
                   children: [
                     SizedBox(
@@ -54,7 +54,7 @@ class SpecialOffersScreen extends StatelessWidget {
                         '12 oy davomida foizsiz bo\'lib to\'lash',
                         style: GoogleFonts.montserrat(
                           fontSize: 17,
-                          color: Color(0xFF05141F),
+                          color: const Color(0xFF05141F),
                         ),
                       ),
                     ),
@@ -65,7 +65,7 @@ class SpecialOffersScreen extends StatelessWidget {
                 width: width * 0.21,
                 height: 400,
                 color: Colors.grey[100],
-                padding: EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Column(
                   children: [
                     SizedBox(
@@ -86,7 +86,7 @@ class SpecialOffersScreen extends StatelessWidget {
                         'Kreditlash uchun maxsus taklif',
                         style: GoogleFonts.montserrat(
                           fontSize: 17,
-                          color: Color(0xFF05141F),
+                          color: const Color(0xFF05141F),
                         ),
                       ),
                     ),
@@ -97,7 +97,7 @@ class SpecialOffersScreen extends StatelessWidget {
                 width: width * 0.21,
                 height: 400,
                 color: Colors.grey[100],
-                padding: EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Column(
                   children: [
                     SizedBox(
@@ -118,7 +118,7 @@ class SpecialOffersScreen extends StatelessWidget {
                         'Asaka Bank-dan 50% avans to\'lovi bilan avtomobil krediti, butun model oralig\'i uchun 0% stavka',
                         style: GoogleFonts.montserrat(
                           fontSize: 17,
-                          color: Color(0xFF05141F),
+                          color: const Color(0xFF05141F),
                         ),
                       ),
                     ),
@@ -129,7 +129,7 @@ class SpecialOffersScreen extends StatelessWidget {
                 width: width * 0.21,
                 height: 400,
                 color: Colors.grey[100],
-                padding: EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Column(
                   children: [
                     SizedBox(
@@ -150,7 +150,7 @@ class SpecialOffersScreen extends StatelessWidget {
                         'Davr Bank-dan 0% avans to\'lovi bilan avtomobil krediti, butun model oralig\'i uchun 24% stavka',
                         style: GoogleFonts.montserrat(
                           fontSize: 17,
-                          color: Color(0xFF05141F),
+                          color: const Color(0xFF05141F),
                         ),
                       ),
                     ),
@@ -159,7 +159,7 @@ class SpecialOffersScreen extends StatelessWidget {
               ),
             ],
           ),
-          Footer(),
+          const Footer(),
         ],
       ),
     );

@@ -1,10 +1,11 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:car_dealership/providers/cars_api.dart';
+import 'package:car_dealership/screens/model_info_screen.dart';
 import 'package:car_dealership/widgets/app_bar_widget.dart';
 import 'package:currency_formatter/currency_formatter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -21,8 +22,8 @@ class ModelsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF227093),
-        title: AppBarWidget(),
+        backgroundColor: const Color(0xFF227093),
+        title: const AppBarWidget(),
         automaticallyImplyLeading: false,
         toolbarHeight: 80,
       ),
@@ -51,33 +52,38 @@ class ModelsScreen extends StatelessWidget {
                     ? GridView.builder(
                         shrinkWrap: true,
                         itemCount: snapshot.data!.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, childAspectRatio: 1.4),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, childAspectRatio: 1.4),
                         itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(left: 50, top: 50),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 250,
-                                  // height: 250,
-                                  child: Image.network(snapshot.data![index].image),
-                                ),
-                                Text(
-                                  snapshot.data![index].name,
-                                  style: const TextStyle(
-                                    fontSize: 30,
-                                    color: Color(0xFF05141F),
+                          return InkWell(
+                            onTap: () {
+                              context.goNamed(ModelInfoScreen.routeName, params: {'name': snapshot.data![index].name});
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 50, top: 50),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 250,
+                                    // height: 250,
+                                    child: Image.network(snapshot.data![index].image),
                                   ),
-                                ),
-                                Text(
-                                  '${CurrencyFormatter.format(snapshot.data![index].price, som)} so\'m dan',
-                                  style: GoogleFonts.montserrat(
-                                    fontSize: 16,
-                                    color: Color(0xFF05141F),
+                                  Text(
+                                    snapshot.data![index].name,
+                                    style: const TextStyle(
+                                      fontSize: 30,
+                                      color: Color(0xFF05141F),
+                                    ),
                                   ),
-                                )
-                              ],
+                                  Text(
+                                    '${CurrencyFormatter.format(snapshot.data![index].price, som)} so\'m dan',
+                                    style: GoogleFonts.montserrat(
+                                      fontSize: 16,
+                                      color: const Color(0xFF05141F),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         },
@@ -105,31 +111,36 @@ class ModelsScreen extends StatelessWidget {
                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, childAspectRatio: 1.4),
                         itemCount: snapshot.data!.length,
                         itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(left: 50, top: 50),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 250,
-                                  // height: 250,
-                                  child: Image.network(snapshot.data![index].image),
-                                ),
-                                Text(
-                                  snapshot.data![index].name,
-                                  style: const TextStyle(
-                                    fontSize: 30,
-                                    color: Color(0xFF05141F),
+                          return InkWell(
+                            onTap: () {
+                              context.goNamed(ModelInfoScreen.routeName, params: {'name': snapshot.data![index].name});
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 50, top: 50),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 250,
+                                    // height: 250,
+                                    child: Image.network(snapshot.data![index].image),
                                   ),
-                                ),
-                                Text(
-                                  '${CurrencyFormatter.format(snapshot.data![index].price, som)} so\'m dan',
-                                  style: GoogleFonts.montserrat(
-                                    fontSize: 16,
-                                    color: Color(0xFF05141F),
+                                  Text(
+                                    snapshot.data![index].name,
+                                    style: const TextStyle(
+                                      fontSize: 30,
+                                      color: Color(0xFF05141F),
+                                    ),
                                   ),
-                                )
-                              ],
+                                  Text(
+                                    '${CurrencyFormatter.format(snapshot.data![index].price, som)} so\'m dan',
+                                    style: GoogleFonts.montserrat(
+                                      fontSize: 16,
+                                      color: const Color(0xFF05141F),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         },
@@ -155,33 +166,38 @@ class ModelsScreen extends StatelessWidget {
                     ? GridView.builder(
                         shrinkWrap: true,
                         itemCount: snapshot.data!.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, childAspectRatio: 1.4),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, childAspectRatio: 1.4),
                         itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(left: 50, top: 50),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 250,
-                                  // height: 250,
-                                  child: Image.network(snapshot.data![index].image),
-                                ),
-                                Text(
-                                  snapshot.data![index].name,
-                                  style: const TextStyle(
-                                    fontSize: 30,
-                                    color: Color(0xFF05141F),
+                          return InkWell(
+                            onTap: () {
+                              context.goNamed(ModelInfoScreen.routeName, params: {'name': snapshot.data![index].name});
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 50, top: 50),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 250,
+                                    // height: 250,
+                                    child: Image.network(snapshot.data![index].image),
                                   ),
-                                ),
-                                Text(
-                                  '${CurrencyFormatter.format(snapshot.data![index].price, som)} so\'m dan',
-                                  style: GoogleFonts.montserrat(
-                                    fontSize: 16,
-                                    color: Color(0xFF05141F),
+                                  Text(
+                                    snapshot.data![index].name,
+                                    style: const TextStyle(
+                                      fontSize: 30,
+                                      color: Color(0xFF05141F),
+                                    ),
                                   ),
-                                )
-                              ],
+                                  Text(
+                                    '${CurrencyFormatter.format(snapshot.data![index].price, som)} so\'m dan',
+                                    style: GoogleFonts.montserrat(
+                                      fontSize: 16,
+                                      color: const Color(0xFF05141F),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         },
@@ -208,33 +224,38 @@ class ModelsScreen extends StatelessWidget {
                         shrinkWrap: true,
                         padding: const EdgeInsets.only(bottom: 100),
                         itemCount: snapshot.data!.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, childAspectRatio: 1.4),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, childAspectRatio: 1.4),
                         itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(left: 50, top: 50),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 250,
-                                  // height: 250,
-                                  child: Image.network(snapshot.data![index].image),
-                                ),
-                                Text(
-                                  snapshot.data![index].name,
-                                  style: const TextStyle(
-                                    fontSize: 30,
-                                    color: Color(0xFF05141F),
+                          return InkWell(
+                            onTap: () {
+                              context.goNamed(ModelInfoScreen.routeName, params: {'name': snapshot.data![index].name});
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 50, top: 50),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 250,
+                                    // height: 250,
+                                    child: Image.network(snapshot.data![index].image),
                                   ),
-                                ),
-                                Text(
-                                  '${CurrencyFormatter.format(snapshot.data![index].price, som)} so\'m dan',
-                                  style: GoogleFonts.montserrat(
-                                    fontSize: 16,
-                                    color: Color(0xFF05141F),
+                                  Text(
+                                    snapshot.data![index].name,
+                                    style: const TextStyle(
+                                      fontSize: 30,
+                                      color: Color(0xFF05141F),
+                                    ),
                                   ),
-                                )
-                              ],
+                                  Text(
+                                    '${CurrencyFormatter.format(snapshot.data![index].price, som)} so\'m dan',
+                                    style: GoogleFonts.montserrat(
+                                      fontSize: 16,
+                                      color: const Color(0xFF05141F),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         },
@@ -246,7 +267,7 @@ class ModelsScreen extends StatelessWidget {
                           );
               },
             ),
-            Footer(),
+            const Footer(),
           ],
         ),
       ),
