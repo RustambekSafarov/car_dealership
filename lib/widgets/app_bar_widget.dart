@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import
 
+import 'package:car_dealership/screens/dilers_screen.dart';
 import 'package:car_dealership/screens/home_screen.dart';
 import 'package:car_dealership/screens/models_screen.dart';
 import 'package:car_dealership/screens/special_offers_screen.dart';
@@ -31,7 +32,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
+          SizedBox(
             width: constraints.maxWidth * 0.38,
             // color: Colors.transparent,
             child: Row(
@@ -147,7 +148,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             width: constraints.maxWidth * 0.4,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -167,7 +168,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     hoverColor: Colors.transparent,
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
-                    onTap: () {},
+                    onTap: () {
+                      context.goNamed(DilersScreen.routeName);
+                    },
                     child: Text(
                       'Dilerlar',
                       style: diler == false ? appBarTextUnderlined : appBarText,
@@ -245,7 +248,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.phone,
                     color: Colors.black,
                   ),
@@ -255,7 +258,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () {},
-                  child: Icon(Icons.shopping_cart_outlined),
+                  child: const Icon(Icons.shopping_cart_outlined),
                 )
               ],
             ),

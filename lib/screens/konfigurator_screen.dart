@@ -14,7 +14,7 @@ class _KonfiguratorScreenState extends State<KonfiguratorScreen> {
     return Scaffold(
       body: Center(
         child: ActionChip(
-          label: Text('Konfigurator'),
+          label: const Text('Konfigurator'),
           onPressed: () {},
         ),
       ),

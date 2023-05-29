@@ -8,7 +8,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF05141F),
+      color: const Color(0xFF05141F),
       child: Column(
         children: [
           const Padding(
@@ -221,28 +221,28 @@ class Footer extends StatelessWidget {
                             children: [
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(
+                                icon: const Icon(
                                   LineAwesomeIcons.youtube,
                                   color: Colors.white,
                                 ),
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(
+                                icon: const Icon(
                                   LineAwesomeIcons.instagram,
                                   color: Colors.white,
                                 ),
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(
+                                icon: const Icon(
                                   LineAwesomeIcons.facebook,
                                   color: Colors.white,
                                 ),
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(
+                                icon: const Icon(
                                   LineAwesomeIcons.telegram,
                                   color: Colors.white,
                                 ),
