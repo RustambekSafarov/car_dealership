@@ -43,12 +43,12 @@ class MyApp extends StatelessWidget {
               GoRoute(
                 path: 'konfigurator',
                 name: KonfiguratorScreen.routeName,
-                builder: (context, state) => KonfiguratorScreen(),
+                builder: (context, state) => const KonfiguratorScreen(),
               ),
               GoRoute(
                 path: 'maxsus',
                 name: SpecialOffersScreen.routeName,
-                builder: (context, state) => SpecialOffersScreen(),
+                builder: (context, state) => const SpecialOffersScreen(),
               ),
             ],
           )
