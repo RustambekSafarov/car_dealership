@@ -101,10 +101,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   CarouselSlider.builder(
                     itemCount: 8,
                     itemBuilder: (context, index, realIndex) {
-                      return SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        child: VideoPlayer(_controller),
-                      );
+                      return VideoPlayer(_controller);
                     },
                     options: CarouselOptions(
                       aspectRatio: 1.778,
