@@ -9,7 +9,7 @@ class ModelInfo with ChangeNotifier {
       'https://telegra.ph/file/3ad23d975bec758a48190.png',
     ],
     'sorento': [
-      'https://telegra.ph/file/d310ace1bf485e16bcfd5.png',
+      'https://telegra.ph/file/7523f6fa4c0cc0ba01c8a.jpg',
       'https://telegra.ph/file/ec9ffde54947c7a16fe7e.png',
       'https://telegra.ph/file/eb364895d2504ab46bc88.png',
       'https://telegra.ph/file/57eb24cb41d46262eb4d0.png',

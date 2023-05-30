@@ -1,6 +1,9 @@
 import 'package:car_dealership/widgets/diler_widget.dart';
+import 'package:car_dealership/widgets/footer.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../providers/diler_api.dart';
 import '../widgets/app_bar_widget.dart';
 
 class DilersScreen extends StatelessWidget {
@@ -19,7 +22,7 @@ class DilersScreen extends StatelessWidget {
       body: ListView(
         children: [
           const Padding(
-            padding: EdgeInsets.only(left: 50, top: 50),
+            padding: EdgeInsets.only(left: 50, top: 50, bottom: 50),
             child: Text(
               'Kia rasmiy dilerlari',
               style: TextStyle(
@@ -30,11 +33,31 @@ class DilersScreen extends StatelessWidget {
               ),
             ),
           ),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) => DilerWidget(),
-          )
+          FutureBuilder(
+            future: Provider.of<DilerApi>(context, listen: false).getDilers(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (snapshot.hasError) {
+                return Center(
+                  child: Text(snapshot.error.toString()),
+                );
+              } else {
+                final dilers = Provider.of<DilerApi>(context, listen: false).dilers;
+                return ListView.builder(
+                  itemCount: dilers.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) => DilerWidget(
+                    data: dilers[index],
+                  ),
+                );
+              }
+            },
+          ),
+          Footer(),
         ],
       ),
     );

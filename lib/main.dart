@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:car_dealership/providers/cars_api.dart';
+import 'package:car_dealership/providers/diler_api.dart';
 import 'package:car_dealership/providers/model_info.dart';
 import 'package:car_dealership/screens/dilers_screen.dart';
 import 'package:car_dealership/screens/example.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => CarApi()),
         ChangeNotifierProvider(create: (context) => ModelInfo()),
+        ChangeNotifierProvider(create: (context) => DilerApi()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
